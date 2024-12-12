@@ -3,8 +3,10 @@
 const baseURL = 'http://localhost:3000';
 
 // Function to fetch and display ramen images on page load
-function displayRamens() {
-  fetch(`${baseURL}/ramens`)
+function displayRamens() { 
+  fetch(`${baseURL}/ramens`, {
+    method: 'GET' // Explicitly specifying the HTTP method
+  })
     .then((response) => response.json())
     .then((ramens) => {
       const ramenMenuDiv = document.getElementById('ramen-menu');
@@ -22,6 +24,7 @@ function displayRamens() {
     .catch((error) => console.error('Error fetching ramen data:', error));
 }
 
+
 // Function to handle clicking on a ramen image
 function handleClick(event) {
   const ramenId = event.target.dataset.id;
@@ -36,8 +39,9 @@ function handleClick(event) {
       document.getElementById('rating-display').textContent = ramen.rating;
       document.getElementById('comment-display').textContent = ramen.comment;
     })
-    .catch((error) => console.error('Error fetching ramen details:', error));
-}
+     .catch((error) => console.error('Error fetching ramen details:', error));
+    }
+
 
 // Function to handle form submission to add a new ramen
 function addSubmitListener() {
