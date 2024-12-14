@@ -104,5 +104,6 @@ As a user, I can:
 - persist my updates to a ramen's rating and comment. (PATCH request)
 - persist new ramens that I create (POST request)
 - persist any ramen deletions (DELETE request)
-##GitHub Pages Link
+
+##
  -https://visionnaire1000.github.io/phase-1-cc-ramen-rater-v2/
